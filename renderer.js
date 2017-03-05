@@ -26,7 +26,7 @@ $(document).ready(() => {
     // Create the generator
     textGenerator = new Text(fullText);
 
-    addMessage(`Found ${rows.length} messages.  Click 'Generate Text' to generate a text based on the iMessages you've sent in the past!`, true);
+    addMessage(`Found ${rows.length.toLocaleString()} messages.  Click 'Generate Text' to generate a text based on the iMessages you've sent in the past!`, true);
     $('button.generate').removeAttr('disabled');
     canCreate = true;
 

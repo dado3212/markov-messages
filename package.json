@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "postinstall": "install-app-deps"
+    "postinstall": "install-app-deps",
+    "package": "electron-packager . --overwrite --platform=darwin --icon=MarkovMessages.icns --out=release-builds"
   },
   "keywords": [
     "Electron",
