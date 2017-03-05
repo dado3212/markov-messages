@@ -1,0 +1,27 @@
+{
+  "name": "MarkovMessages",
+  "version": "1.0.0",
+  "description": "Generates texts using Markov chains from your iMessage history.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "postinstall": "install-app-deps"
+  },
+  "keywords": [
+    "Electron",
+    "Markov",
+    "chain",
+    "iMessage"
+  ],
+  "author": "Alex Beals",
+  "devDependencies": {
+    "builder": "^3.2.1",
+    "electron": "^1.6.1"
+  },
+  "dependencies": {
+    "electron-builder": "^14.5.3",
+    "markov-chains-text": "^1.0.0",
+    "sqlite3": "^3.1.8",
+    "tiny-worker": "^2.0.1"
+  }
+}
