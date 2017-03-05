@@ -12,6 +12,9 @@ You can download the .dmg file from [my personal website](https://alexbeals.com/
 
 <ul>
   <li>
+  Electron
+  <ul>
+  <li>
   JS
   <ul>
   <li>Node</li>
@@ -23,6 +26,8 @@ You can download the .dmg file from [my personal website](https://alexbeals.com/
   </li>
   <li>
   CSS
+  </li>
+  </ul>
   </li>
 </ul>
 
