@@ -15,6 +15,29 @@ function createWindow () {
     titleBarStyle: 'hidden'
   });
 
+  // mainWindow.webContents.on('context-menu', (e, props) => {
+  //   console.log(e);
+  //   console.log(props);
+  //   const editFlags = props.editFlags;
+  //   const hasText = props.selectionText.trim().length > 0;
+  //   const can = type => editFlags[`can${type}`] && hasText;
+
+  //   let menuTpl = [{
+  //     id: 'copy',
+  //     label: 'Copy',
+  //     role: can('Copy') ? 'copy' : '',
+  //     enabled: can('Copy'),
+  //     visible: props.isEditable || hasText
+  //   },{
+  //     type: 'separator'
+  //   }];
+
+  //   if (menuTpl.length > 0) {
+  //     const menu = (electron.Menu || electron.remote.Menu).buildFromTemplate(menuTpl);
+  //     menu.popup(mainWindow);
+  //   }
+  // });
+
   mainWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'index.html'),
     protocol: 'file:',
@@ -23,29 +46,6 @@ function createWindow () {
 
   // --prune=true --out=release-builds
   mainWindow.webContents.openDevTools();
-
-  mainWindow.webContents.on('context-menu', (e, props) => {
-    console.log(e);
-    console.log(props);
-    const editFlags = props.editFlags;
-    const hasText = props.selectionText.trim().length > 0;
-    const can = type => editFlags[`can${type}`] && hasText;
-
-    let menuTpl = [{
-      id: 'copy',
-      label: 'Copy',
-      role: can('Copy') ? 'copy' : '',
-      enabled: can('Copy'),
-      visible: props.isEditable || hasText
-    },{
-      type: 'separator'
-    }];
-
-    if (menuTpl.length > 0) {
-      const menu = (electron.Menu || electron.remote.Menu).buildFromTemplate(menuTpl);
-      menu.popup(mainWindow);
-    }
-  });
 
   mainWindow.on('closed', function () {
     mainWindow = null
